@@ -1,12 +1,8 @@
 services:
   app:
-    image: node:latest
-    working_dir: /usr/src
-    tty: true
+    build: ./src
     ports:
       - '3000:3000'
       - '5173:5173'
     volumes:
       - ./src:/usr/src
-    entrypoint: >
-      sh -c "yarn install"

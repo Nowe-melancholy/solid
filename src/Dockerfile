@@ -1,6 +1,6 @@
-FROM node:16.14.2
+FROM node:latest
 
-VOLUME [ "./src" ]
 WORKDIR /usr/src
+COPY ./package.json /usr/src/
+COPY ./yarn.lock /usr/src/
 RUN yarn install
-EXPOSE 3000
